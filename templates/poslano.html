@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>RO Proga</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- my CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <!-- <a href="/vnos_vaj">SEZNAM VAJ</a> -->
+  <a href="/">SESTAVI VAJO</a>
+  <h1>Sestavimo progo!</h1>
+  <br>
+<br>
+
+<p> Testna sestava z vnosom števil (0 pomeni prazna vaja, odlaganje je 73 in 74, uporaba števila 47, je kombinacija obojega.</p>
+
+<form class="" action="/" method="post">
+
+
+        {%for k in range(1,21)%}
+            <label for="st_vaje_na_progi_{{k}}">{{k}}</label>
+            <input class="vnos_proge" type="number" name="st_vaje_na_progi_{{k}}" value="{{list[k-1]}}">
+        {% endfor %}
+
+
+  <button type="submit" name="direktni_vnos">Poslji zaporedje</button>
+  <button type="button" name="button"><a href="/">ZBRIŠI</a></button>
+
+
+</form>
+<br>
+<div class="container-fluid">
+      <div class="row">
+        {% set i=1 %}
+            {% for l in list %}
+
+                    <div class="col-md-3">
+                          <div class="thumbnail">
+                            <img src="/assets/media/{{l}}.jpg" alt="RO vaja {{l}}">
+                            <div class="caption">
+                                Št. vaje na progi:{{i}}
+                            </div>
+                          </div>
+                    </div>
+                {%set i = i+1 %}
+              {% endfor %}
+        </div>
+</div>
+<br><br><br><br>
+<h1>Legenda vaj</h1>
+<div class="container-fluid">
+      {% for i in range(0,12) %}
+      <div class="row">
+        {% set k=i*6+1 %}
+            {% for j in range (k, k+12) %}
+                    <div class="col-md-1">
+                          <div class="thumbnail">
+                            <img src="/assets/media/{{j}}.jpg" alt="RO vaja {{j}}">
+                            <div class="stevilka_center">
+                              <p>{{j}}</p>
+
+                            </div>
+                          </div>
+                    </div>
+              {% endfor %}
+        </div>
+        {% set i=i+1 %}
+      {% endfor %}
+</div>
+
+
+
+</body>
+</html>

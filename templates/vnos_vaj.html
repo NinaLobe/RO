@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Vnos vaj</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- my CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <a href="/vnos_vaj">SEZNAM VAJ</a>
+  <a href="/">SESTAVI VAJO</a>
+  <h1>Izberi vaje in njihovo začetno zaporedje</h1>
+
+<form class="" action="/vnos_vaj" method="post">
+
+<button type="submit" name="prenesi_vaje_na_progo">Prenesi vaje na progo</button>
+<div class="container-fluid">
+      {% for i in range(0,12) %}
+      <div class="row">
+        {% set k=i*6+1 %}
+            {% for j in range (k, k+6) %}
+                    <div class="col-md-2">
+                          <div class="thumbnail">
+                            <img src="/assets/media/{{j}}.jpg" alt="RO vaja {{j}}">
+                            <div class="caption">
+                              <p>Izberi vajo in zap. številko na progi:</p>
+                              <input type="checkbox" name="vaja_{{j}}">
+                              <input type="number" class="zaporedna_stevika" name="zaporedna_st_{{j}}" value="0">
+                            </div>
+                          </div>
+                    </div>
+              {% endfor %}
+        </div>
+        {% set i=i+1 %}
+      {% endfor %}
+</div>
+</form>
+</body>
+</html>

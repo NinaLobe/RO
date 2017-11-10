@@ -1,0 +1,43 @@
+body {
+    background-color: grey;
+}
+.zaporedna_stevika{
+  width: 32px;
+}
+select.icon-menu option {
+background-repeat:no-repeat;
+background-position:bottom left;
+padding-left:300px;
+}
+
+.stevilka_center{
+  text-align: center;
+  font-size: 12px:
+}
+.vnos_proge{
+  margin: 8px;
+  width: 40px;
+}
+
+.puscica_gor{
+  width: 80px;
+  height: 80px;
+  background-image: url("/assets/media/gor.png");
+}
+
+}
+.puscica_dol{
+  width: 80px;
+  height: 80px;
+  background-image: url("/assets/media/dol.png");
+}
+#puscica_levo{
+  width: 80px;
+  height: 80px;
+  background-image: url("/assets/media/levo.png");
+}
+#puscica_desno{
+  width: 80px;
+  height: 80px;
+  background-image: url("/assets/media/desno.png");
+}
